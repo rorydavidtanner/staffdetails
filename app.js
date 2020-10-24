@@ -1,6 +1,7 @@
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const Employee = require("./lib/Employee")
 const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
@@ -12,6 +13,16 @@ const render = require("./lib/htmlRenderer");
 
 
 // Write code to use inquirer to gather information about the development team members,
+
+const inputDataCollection = [
+    {type: 'input', name: 'employeeId', message: 'Identification Code of the Employee :'},
+    {type: 'input', name: 'employeeName', message: 'Name of the Employee : '},
+    {type: 'input', name: 'department', message: 'Department of the Employee :'},
+    {type: 'input', name: 'position', message: 'Position of the Employee :'},
+    {type: 'input', name: 'earningsType', message: 'Earning Type of Employee :'},
+    {type: 'input', name: 'workedHours', message: 'Worked hours of the Employee :'},
+    {type: 'input', name: 'age', message: 'Age of the Employee :'}
+  ]
 // and to create objects for each team member (using the correct classes as blueprints!)
 
 // After the user has input all employees desired, call the `render` function (required
