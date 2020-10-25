@@ -78,9 +78,9 @@ const userQuestions = [
 
   async function createEmployees(employeeInput = []) {
     try {
-        const { again, ...answers } = await inquirer.prompt(userQuestions);
+        const { enterAgain, ...answers } = await inquirer.prompt(userQuestions);
         const newEmployee = [...employeeInput, answers];
-        return again ? createEmployees(newEmployee) : newEmployee
+        return enterAgain ? createEmployees(newEmployee) : newEmployee
       } catch (err) {
         throw err;
       }

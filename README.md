@@ -27,11 +27,9 @@ If you are missing a package then download the required packages from terminal (
 
 The application itself runs from the command line, run "node app.js"
 
+The user is then presented with questions which get more tailored for their job role.
 
-
-The resulting html file appears in an output directory as output.html
-
-
+Following the input of the data and number of employees, there is a html file generated which appears in an output directory as team.html
 
 # Dependencies
 
