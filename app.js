@@ -18,25 +18,25 @@ const userQuestions = [
     {
         type: "input", 
         name: "employeeId", 
-        message: "What is your Employee ID :",
+        message: "What is your Employee ID?",
     },
     
     {
         type: "input", 
         name: "employeeName", 
-        message: "What is your name : ",
+        message: "What is your name?",
     },
     
     {
         type: "input", 
         name: "email", 
-        message: "What is your email :",
+        message: "What is your email?",
     },
     
     {
         type: "list", 
         name: "role", 
-        message: "What is your role :", 
+        message: "What is your role?", 
         choices: ["Manager", "Engineer", "Intern"]
     },
     
@@ -76,13 +76,13 @@ const userQuestions = [
 
   // prompting user to add more eployees 
 
-  async function createEmployees (employeeInput = []) {
+  async function createEmployees(employeeInput = []) {
     try {
         const { again, ...answers } = await inquirer.prompt(userQuestions);
         const newEmployee = [...employeeInput, answers];
         return again ? createEmployees(newEmployee) : newEmployee
       } catch (err) {
-          throw err;
+        throw err;
       }
   }
 
@@ -92,7 +92,7 @@ const userQuestions = [
         const employeeData = await createEmployees();
 
         employeeData.map((employee) => {
-            const { name, id, role, officeNumber, school, github } = employee;
+            const { name, id, email, role, officeNumber, school, github } = employee;
 
             if (role === "Manager") {
                 const newManager = new Manager(name, id, email, officeNumber);
@@ -100,7 +100,6 @@ const userQuestions = [
             } else if (role === "Engineer") {
                 const newEngineer = new Engineer(name, id, email, github);
                 employees.push(newEngineer);
-
             } else {
                 const newIntern = new Intern(name, id, email, school);
                 employees.push(newIntern);
@@ -109,8 +108,8 @@ const userQuestions = [
 
         const renderEmployee = render(employees);
         fs.writeFile(outputPath, renderEmployee, () => console.log("BAM! Successful!"));
-    } catch (err) {
-        throw new Error(err);
+    }   catch (err) { 
+        throw new Error (err);
     }
 }
 
