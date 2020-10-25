@@ -109,7 +109,7 @@ const userQuestions = [
 
         const renderEmployee = render(employees);
         fs.writeFile(outputPath, renderEmployee, () => console.log("BAM! Successful!"));
-    }   catch (err) {
+    } catch (err) {
         throw new Error(err);
     }
 }
