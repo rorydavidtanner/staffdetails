@@ -17,13 +17,13 @@ const render = require("./lib/htmlRenderer");
 const userQuestions = [
     {
         type: "input", 
-        name: "employeeId", 
+        name: "id", 
         message: "What is your Employee ID?",
     },
     
     {
         type: "input", 
-        name: "employeeName", 
+        name: "name", 
         message: "What is your name?",
     },
     
